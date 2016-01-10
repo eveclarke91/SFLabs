@@ -10,7 +10,33 @@
  
       <script src="./common/babel-core_5.8.24_browser.min.js"></script>
       <script type="text/babel">
-           // React code goes here
+            ReactDOM.render(
+                <div>
+                  <h1>SSD 4 Modules table </h1>
+                         <table className="table table-bordered">
+                   <thead>
+                      <tr>
+                      <th>Name</th>
+                      <th>No lectures</th>
+                      <th>No practicls</th>
+                      </tr>
+                  </thead>
+                  <tbody >
+                   <tr >
+                        <td>Software Frameworks</td>
+                        <td>3</td>
+                        <td>2</td>
+                      </tr>
+                      <tr >
+                        <td>Dynamic web Developmnt</td>
+                        <td>3</td>
+                        <td>3</td>
+                      </tr>
+                  </tbody >
+                </table>
+                </div>,
+          document.getElementById('mount-point')
+      );
     </script>
   </body>
 </html>
