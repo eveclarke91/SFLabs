@@ -12,6 +12,10 @@
       <script type="text/babel">
         var Subjects = React.createClass({
           render: function(){
+              var subjects = [
+                 {name: 'Software Frameworks', noLectures: 3, noPracticals: 2},
+                 {name: 'Dynamic web Developmnt', noLectures: 3, noPracticals: 2}
+              ] ;
               return (
                 <div>
                   <h1>SSD 4 Modules table </h1>
@@ -25,14 +29,14 @@
                   </thead>
                   <tbody >
                    <tr >
-                        <td>Software Frameworks</td>
-                        <td>3</td>
-                        <td>2</td>
+                        <td>{subjects[0].name} </td>
+                        <td>{subjects[0].noLectures}</td>
+                        <td>{subjects[0].noPracticals}</td>
                       </tr>
-                      <tr >
-                        <td>Dynamic web Developmnt</td>
-                        <td>3</td>
-                        <td>3</td>
+                      <tr>
+                         <td>{subjects[1].name} </td>
+                        <td>{subjects[1].noLectures}</td>
+                        <td>{subjects[1].noPracticals}</td>
                       </tr>
                   </tbody >
                 </table>
