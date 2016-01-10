@@ -10,7 +10,9 @@
  
       <script src="./common/babel-core_5.8.24_browser.min.js"></script>
       <script type="text/babel">
-            ReactDOM.render(
+        var Subjects = React.createClass({
+          render: function(){
+              return (
                 <div>
                   <h1>SSD 4 Modules table </h1>
                          <table className="table table-bordered">
@@ -34,7 +36,12 @@
                       </tr>
                   </tbody >
                 </table>
-                </div>,
+                </div>
+              );
+          }
+      });
+
+      ReactDOM.render(<Subjects/>,
           document.getElementById('mount-point')
       );
     </script>
