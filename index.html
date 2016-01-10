@@ -12,13 +12,10 @@
       <script type="text/babel">
         var Subjects = React.createClass({
           render: function(){
-              var subjects = [
-                 {name: 'Software Frameworks', noLectures: 3, noPracticals: 2},
-                 {name: 'Dynamic web Developmnt', noLectures: 3, noPracticals: 2}
-              ] ;
+ 
               return (
                 <div>
-                  <h1>SSD 4 Modules table </h1>
+                  <h1>{this.props.course} Modules table </h1>
                          <table className="table table-bordered">
                    <thead>
                       <tr>
@@ -29,14 +26,14 @@
                   </thead>
                   <tbody >
                    <tr >
-                        <td>{subjects[0].name} </td>
-                        <td>{subjects[0].noLectures}</td>
-                        <td>{subjects[0].noPracticals}</td>
+                        <td>{this.props.subjects[0].name} </td>
+                        <td>{this.props.subjects[0].noLectures}</td>
+                        <td>{this.props.subjects[0].noPracticals}</td>
                       </tr>
                       <tr>
-                         <td>{subjects[1].name} </td>
-                        <td>{subjects[1].noLectures}</td>
-                        <td>{subjects[1].noPracticals}</td>
+                         <td>{this.props.subjects[1].name} </td>
+                        <td>{this.props.subjects[1].noLectures}</td>
+                        <td>{this.props.subjects[1].noPracticals}</td>
                       </tr>
                   </tbody >
                 </table>
@@ -44,8 +41,12 @@
               );
           }
       });
-
-      ReactDOM.render(<Subjects/>,
+      var subjectList = [
+                 {name: 'Software Frameworks', noLectures: 3, noPracticals: 2},
+                 {name: 'Dynamic web Developmnt', noLectures: 3, noPracticals: 2}
+              ] ;
+        var name = 'SSD 4' ;
+      ReactDOM.render(<Subjects subjects={subjectList} course={name} />,
           document.getElementById('mount-point')
       );
     </script>
