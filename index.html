@@ -12,7 +12,15 @@
       <script type="text/babel">
         var Subjects = React.createClass({
           render: function(){
- 
+              var list = this.props.subjects.map(function(subject, index){
+                    return (
+                      <tr >
+                        <td>{subject.name} </td>
+                        <td>{subject.noLectures}</td>
+                        <td>{subject.noPracticals}</td>
+                      </tr>
+                      );
+                  });
               return (
                 <div>
                   <h1>{this.props.course} Modules table </h1>
@@ -25,16 +33,7 @@
                       </tr>
                   </thead>
                   <tbody >
-                   <tr >
-                        <td>{this.props.subjects[0].name} </td>
-                        <td>{this.props.subjects[0].noLectures}</td>
-                        <td>{this.props.subjects[0].noPracticals}</td>
-                      </tr>
-                      <tr>
-                         <td>{this.props.subjects[1].name} </td>
-                        <td>{this.props.subjects[1].noLectures}</td>
-                        <td>{this.props.subjects[1].noPracticals}</td>
-                      </tr>
+                      {list}
                   </tbody >
                 </table>
                 </div>
